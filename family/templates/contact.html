@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{%block title%}Contact{%endblock%}
+
+{% block bodyblock %}
+<div class="container-fluid px-0">
+  <img src="/static/img/contact.webp" class="d-block w-100 mx-0" alt="">
+  <h3 style="
+    position: absolute;
+    top: 250px;
+    color: aquamarine;
+">Contact Us : </h3>
+</div>
+<div class="container">
+  <h1 class="container">Contact Us</h1>
+
+  <form method="POST" action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Name">Name</label>
+      <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your full name">
+    </div>
+
+    <div class="form-group">
+      <label for="Email">Email address</label>
+      <input type="Email" class="form-control id="exampleFormContrilInput1" name="Email" placeholder="Enter your email. i.e. name@example.com">
+    </div>
+
+    <div class="form-group">
+      <label for="Phone">Phone no</label>
+      <input type="text" class="form-control id="Phone" name="Phone" placeholder="Enter your mobile no.">
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="Desc">Tell me your requirements</label>
+      <textarea class="form-control" name="Desc" id="Desc" rows="8" cols="80"></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit" name="button">Submit</button>
+  </form>
+
+</div>
+
+
+<h1>This is a contact bodyblock</h1>
+{% endblock %}
